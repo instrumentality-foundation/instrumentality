@@ -21,11 +21,10 @@ export class TasksSectionComponent implements OnInit {
         new Skill("docker"),
         new Skill("hyperledger-iroha")
       ],
-      [
-        0.02,
-        0.02,
-        0.02
-      ]
+      null,
+      null,
+      null,
+      "You have to modify permissions for Company role and add a domain to each company with a TaskManager account."
     ),
 
     new Task(
@@ -38,12 +37,6 @@ export class TasksSectionComponent implements OnInit {
         new Skill("angular"),
         new Skill("html"),
         new Skill("css")
-      ],
-      [
-        0.02,
-        0.02,
-        0.02,
-        0.02
       ],
       null,
       [
@@ -61,10 +54,6 @@ export class TasksSectionComponent implements OnInit {
       [
         new Skill("python"),
         new Skill("hyperledger-iroha")
-      ],
-      [
-        0.01,
-        0.01,
       ],
       null,
       null,
@@ -85,11 +74,6 @@ export class TasksSectionComponent implements OnInit {
         new Skill("html"),
         new Skill("css"),
         new Skill("vue.js")
-      ],
-      [
-        0.05,
-        0.05,
-        0.05
       ],
       new Date(2020, 7, 28)
     ),

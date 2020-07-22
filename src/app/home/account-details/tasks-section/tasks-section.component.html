@@ -1,5 +1,7 @@
-<div class="uk-margin-large-top uk-flex uk-flex-column uk-flex-center uk-flex-middle">
+<h2 class="uk-text-center uk-margin-large-bottom">Welcome to your agenda!</h2>
 
-    <task-comp *ngFor="let task of tasks" [task]="task"></task-comp>
+<div class="uk-margin-medium-top uk-flex uk-flex-column">
+
+    <task-comp *ngFor="let task of tasks" [task]="task" class="uk-width-expand"></task-comp>
 
 </div>

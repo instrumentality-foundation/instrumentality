@@ -1,6 +1,127 @@
 @import "../../../../../theme.less";
 
+#task-container {
+    width: 90%;
+    cursor: pointer;
+    border-radius: .5em;
+    transition: all .3s ease-in-out;
+}
+
+#task-container:hover {
+    box-shadow: 0 14px 25px rgba(0,0,0,.16);
+    transform: translate3d(0, -.5em, 0);
+    transition: all 0.3s ease-in-out;
+}
+
+#task-banner {
+    height: 5em;
+    width: 100%;
+}
+
 h3 {
     font-family: 'Mulish', sans-serif;
     color: @text-color;
+    .fluid-font(1, 25, 320, 3840);
+}
+
+#task-banner span, .uk-modal-header span {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 700;
+    .fluid-font(.6, 18, 320, 3840);
+    border-radius: .3em;
+    &.task-hard {
+        color: @light-color;
+        background-color: @red-color;
+        padding-right: .2em;
+        padding-left: .2em;
+    }
+    &.task-medium {
+        color: @light-color;
+        background-color: @orange-color;
+        padding-right: .2em;
+        padding-left: .2em;
+    }
+    &.task-easy {
+        color: @light-color;
+        background-color: @green-color;
+        padding-right: .2em;
+        padding-left: .2em;
+    }
+}
+
+/* Modal stylings */
+
+.uk-modal-header, .uk-modal-dialog {
+    border-top-left-radius: .5em;
+    border-top-right-radius: .5em;
+
+    h3 {
+        font-weight: 700;
+    }
+}
+
+.uk-modal-body {
+    em {
+        color: @text-color;
+        font-family: 'Mulish', sans-serif;
+        .fluid-font(1, 15, 320, 3840);
+    }
+
+    h4 {
+        font-family: 'Mulish', sans-serif;
+        font-weight: 700;
+        .fluid-font(1, 12, 320, 3840);
+        color: @text-color;
+    }
+
+    span.skill {
+        font-family: 'Mulish', sans-serif;
+        font-weight: 700;
+        .fluid-font (.6, 15, 320, 3840);
+        color: @light-color;
+        border-radius: .3em;
+    }
+
+    #task-subtask-list {
+        width: 100%;
+
+        h4 {
+            font-family: 'Mulish', sans-serif;
+            color: @text-color;
+            .fluid-font(1.2, 15, 320, 3840);
+            margin-bottom: 0;
+            text-decoration: underline;
+        }
+
+        h5 {
+            font-family: 'Mulish', sans-serif;
+            color: @text-color;
+            .fluid-font(1, 12, 320, 3840);
+            cursor: pointer;
+        }
+
+        .uk-divider-icon::after, .uk-divider-icon::before {
+            border-bottom-color: @brand-color-sister;
+        }
+
+        input {
+            padding: 10px;
+        }
+    }
+}
+
+/* Special style for small devices */
+@media only screen and (max-width: 640px) {
+    #task-skill-list {
+        justify-content: center;
+        flex-direction: column;
+
+        h4 {
+            display: none;
+        }
+
+        span {
+            margin-top: 1em;
+        }
+    }
 }

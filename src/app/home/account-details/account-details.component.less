@@ -1,0 +1,43 @@
+@import "../../../theme.less";
+
+#profile-picture {
+    height: 50vw;
+}
+
+#profile-name, #company-name {
+    font-family: 'Mulish', sans-serif;
+}
+
+#profile-name {
+    color: @text-color;
+    .fluid-font (1.5, 50, 320, 3840);
+}
+
+#company-name {
+    color: @brand-color-sister;
+    .fluid-font (1.2, 40, 320, 3840);
+}
+
+#profile-intro button {
+    padding-top: .3em;
+    padding-bottom: .3em;
+    border-radius: .3em;
+    font-family: 'Mulish', sans-serif;
+    font-weight: 700;
+    .fluid-font (1.2, 20, 320, 3840);
+    color: @light-color;
+    background-color: @brand-color-sister-variant;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#profile-intro button:hover {
+    background-color: @green-color;
+    transition: all .3s ease-in-out;
+}
+
+/* Behaviour for medium screens and bigger --> 640px and up */
+@media only screen and (min-width: 640px) {
+    #profile-picture {
+        height: 35vh;
+    }
+}

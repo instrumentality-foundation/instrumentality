@@ -1,0 +1,27 @@
+/***********/
+/* Colors */
+/*********/
+
+/* Brand colors */
+@brand-color: #0FE76D;
+@brand-color-variant: #00D4A4;
+@brand-color-sister: #0080EE;
+@brand-color-sister-variant: #00A1F0;
+
+/* Normal colors */
+@mauve-color: #525B8D;
+@red-color: #FF3553;
+@green-color: #00C07B;
+
+/* Utility colors */
+@light-color: white;
+@text-color: black;
+
+/*******************/
+/* Nice functions */
+/*****************/
+
+/* Fluid typography that's computed by the client */
+.fluid-font(@min-font, @max-font, @min-screen, @max-screen) {
+    font-size: calc(unit(@min-font, em) + (@max-font - @min-font) * ((100vw - unit(@min-screen, px)) / (@max-screen - @min-screen)));
+}

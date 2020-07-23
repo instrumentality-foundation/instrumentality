@@ -26,11 +26,9 @@ export class TaskComponent implements OnInit, AfterViewInit {
     var subtask = this.task.subtasks.find( subtask => subtask.id == subtaskId);
     if (checkbox.checked) {
       subtask.state = true;
-      console.log (subtask.id.toString() + "---" + subtask.state);
     }
     else{
       subtask.state = false;
-      console.log (subtask.id.toString() + "---" + subtask.state);
     }
   }
 

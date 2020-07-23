@@ -1,5 +1,6 @@
 import { Skill } from './skill';
 import { error } from '@angular/compiler/src/util';
+import { Subtask } from './subtask';
 
 /**
  * A class modeling tasks that a developer can receive.
@@ -20,8 +21,6 @@ export class Task {
      * @param description (OPTIONAL) A more detailed description of the task
      */
 
-     private subtasksStatus : Array<boolean> = new Array<boolean>();
-
     constructor(
         public id : number,
         public quantity: number,
@@ -30,22 +29,7 @@ export class Task {
         public skills : Array<Skill>,
         public deadline: Date = null,
         public members : Array<string> = null,
-        public subtasks : Array<string> = null,
+        public subtasks : Array<Subtask> = null,
         public description: string = null
-    ) {
-        if (subtasks != null) {
-            subtasks.forEach( () => {
-                this.subtasksStatus.push(false);
-            });
-        }
-    }
-
-    public toggleSubtask(subtaskId : number) : void {
-        if (subtaskId < 0 || subtaskId > this.subtasks.length - 1) {
-            console.error("Wrong subtask number. Not in range!");
-        }
-        else {
-            this.subtasksStatus[subtaskId] = !this.subtasksStatus[subtaskId];
-        }
-    }
+    ) {}
 }

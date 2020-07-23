@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 import * as randomColor from "randomcolor";
 import { Task } from '../task';
+import { Subtask } from '../subtask';
 
 @Component({
   selector: 'task-comp',
@@ -15,18 +16,25 @@ export class TaskComponent implements OnInit, AfterViewInit {
 
   private colors : any;
   private taskElement : HTMLElement;
-  private checkboxes : Array<HTMLInputElement>
-
-  private saveCheckedState() : void {
-    localStorage.setItem(this.task.id.toString() + "checkboxes", )
-  }
 
   ngOnInit(): void {
     this.colors = randomColor({luminosity: 'dark', count: this.task.skills.length});
   }
 
-  ngAfterViewInit(): void {
+  public toggleSubtask(event : Event, subtaskId : number) {
+    var checkbox = event.target as HTMLInputElement;
+    var subtask = this.task.subtasks.find( subtask => subtask.id == subtaskId);
+    if (checkbox.checked) {
+      subtask.state = true;
+      console.log (subtask.id.toString() + "---" + subtask.state);
+    }
+    else{
+      subtask.state = false;
+      console.log (subtask.id.toString() + "---" + subtask.state);
+    }
+  }
 
+  ngAfterViewInit(): void {
   }
 
 }

@@ -42,8 +42,8 @@
                     <h4 class="uk-margin-small-top uk-margin-bottom">Subtasks:</h4>
                     <!-- Actual subtask content -->
                     <div *ngFor="let subtask of task.subtasks; index as i" class="uk-flex uk-flex-row uk-margin-small-top uk-flex-middle">
-                        <input id="{{ task.id }}-sub-{{ i }}" type="checkbox" class="uk-checkbox uk-margin-remove-top">
-                        <h5 class="uk-margin-remove-bottom uk-margin-remove-top uk-margin-left">{{ subtask }}</h5>
+                        <input (click)="toggleSubtask($event, subtask.id)" id="{{ task.id }}-sub-{{ subtask.id }}" type="checkbox" class="uk-checkbox uk-margin-remove-top">
+                        <h5 class="uk-margin-remove-bottom uk-margin-remove-top uk-margin-left">{{ subtask.content }}</h5>
                     </div>
                 </div>
 

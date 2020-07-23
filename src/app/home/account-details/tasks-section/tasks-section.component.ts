@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from "./task";
 import { Skill } from './skill';
+import { Subtask } from './subtask';
 
 @Component({
   selector: 'tasks-section-comp',
@@ -58,10 +59,10 @@ export class TasksSectionComponent implements OnInit {
       null,
       null,
       [
-        "Retest API to signup",
-        "Think about a better message maximum size",
-        "Test the 6048 character limit, see if it works ok",
-        "Limit voting delay to only 500ms"
+        new Subtask(1, 3, "Retest API to signup"),
+        new Subtask(2, 3, "Think about a better message maximum size"),
+        new Subtask(3, 3, "Test the 6048 character limit, see if it works ok"),
+        new Subtask(4, 3, "Limit voting delay to only 500ms")
       ]
     ),
 
